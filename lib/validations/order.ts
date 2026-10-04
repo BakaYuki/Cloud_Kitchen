@@ -30,7 +30,7 @@ export const checkoutFormSchema = z.object({
     .optional()
     .or(z.literal('')),
   payment_method: z.enum(['cod', 'esewa', 'khalti', 'bank_transfer'], {
-    errorMap: () => ({ message: 'Please select a valid payment method' }),
+    error: 'Please select a valid payment method',
   }),
   payment_reference: z
     .string()
